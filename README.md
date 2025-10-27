@@ -3,44 +3,44 @@ Program simulira rad poštanske službe koja dostavlja pakete unutar jednog grad
 Grad je predstavljen kao neusmjeren težinski graf, gdje:
 * čvorovi predstavljaju adrese (mjesta)
 * grane predstavljaju ulice
-* vrijednosti u matrici susjednosti predstavljaju udaljenosti između adresa (mjesta)
+* vrijednosti u matrici susjednosti predstavljaju udaljenosti između adresa (mjesta).
 
 Ulazni podaci uključuju:
 * tekstualni fajl (grad1.txt, grad2.txt, grad3.txt) sa matricom susjednosti grada
 * CSV fajl (posta1.csv, posta2.csv) sa spiskom paketa koje je potrebno dostaviti.
 
-## Struktura podataka o paketu
-Svaki paket sadrži
+## Paket - struktura podataka
+Svaki paket sadrži:
 * naziv,
 * opis,
 * adresu (broj čvora na koju ga je potrebno isporučiti)
 * masu
-* prioritet (0 - 100)
+* prioritet (0 - 100).
 
 Paketi se prvo obrađuju po prioritetu, a zatim po masi - do maksimalne težine koju vozilo može da prihvati.
-Paketi koji ne mogu da stanu u vozilo zapisuju se u izlazni fajl (visak paketa2.txt).
+Paketi koji ne mogu da stanu u vozilo zapisuju se u izlazni fajl (*visak paketa.txt*).
 
 ## Tok simulacije
 1. Učitava se matrica susjednosti grada
 2. Iz CSV fajla se učitavaju paketi i smještaju se u **prioritetni red**
-3. Paketi se raspoređuju u dostavno vozilo do maksimalne dozvoljene masse
+3. Paketi se raspoređuju u dostavno vozilo do maksimalne dozvoljene mase
 4. Vozilo kreće iz pošte i obilazi adrese redoslijedom najkraćih ruta koristeći _Floyd-Warshall_-ov algoritam
-5. Nakon svake dostave ispisuje se trenutno stanje - koji paketi su dostavljeni, a koji su ostali
-6. Na kraju se prikazuju:
-7. * broj ukupnih, dostavljenih i neisporučenih paketa
+5. Nakon svake dostave ispisuje se trenutno stanje - trenutni i naredni čvor na putanji, te koji paketi su dostavljeni
+6. Na kraju se prikazuje:
+   * broj ukupnih, dostavljenih i neisporučenih paketa
    * procenat uspješno dostavljenih paketa.
 
 ## Rezultati simulacije
 Na konzoli se prikazuju:
-* matrica susjednosti grada,
+* matrica susjedstva,
 * matrica najkraćih rastojanja (po _Floyd-Warshall_-ovom algoritmu)
 * paketi koji čekaju na dostavljanje (u pošti)
-* paketi koji su uspješno ubačeni u vozilo (i koji će biti raspoređeni)
+* paketi koji su uspješno ubačeni u vozilo (i koji će biti isporučeni)
 * redoslijed dostava
 * ukupna putanja koju je vozilo prešlo prilikom dostavljanja paketa
 * procenat uspješno dostavljenih paketa.
 
-Dodatno, kao rezultat dobija se i fajl sa paketima koji nisu uspješno isporučeni (nisu ubačeni u vozilo radi prekoračenja maksimalne dozvoljene težine).
+Dodatno, kao rezultat dobija se i fajl sa paketima koji nisu uspješno isporučeni (nisu ubačeni u vozilo zbog prekoračenja maksimalne dozvoljene težine).
 
 ## Primjer izvršavanja
 
