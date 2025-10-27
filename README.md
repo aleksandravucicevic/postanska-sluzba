@@ -18,7 +18,7 @@ Svaki paket sadrži:
 * prioritet (0 - 100).
 
 Paketi se prvo obrađuju po prioritetu, a zatim po masi - do maksimalne težine koju vozilo može da prihvati.
-Paketi koji ne mogu da stanu u vozilo zapisuju se u izlazni fajl (*visak paketa.txt*).
+Paketi koji ne mogu da stanu u vozilo zapisuju se u izlazni fajl (*visak_paketa.txt*).
 
 ## Tok simulacije
 1. Učitava se matrica susjednosti grada
