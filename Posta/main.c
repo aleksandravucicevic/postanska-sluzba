@@ -22,7 +22,7 @@ int main()
     //Ucitavanje mreze grada   
     GRAF grad;
     FILE *txt1;
-    if(txt1=fopen("grad2.txt","r"))
+    if(txt1=fopen("grad1.txt","r"))
     {
         char* c=(char*)malloc(10*sizeof(char));
         fgets(c,6,txt1);
@@ -71,7 +71,7 @@ int main()
 
     PAKET tmp;
     FILE* txt2;
-    if(txt2=fopen("posta2.csv","r"))
+    if(txt2=fopen("posta1.csv","r"))
     {
         char* line=(char*)malloc(sizeof(char)*MAX_LINE_LENGTH);
         while(fgets(line,MAX_LINE_LENGTH,txt2)!=NULL)
@@ -98,8 +98,8 @@ int main()
             //Dodavanje u prioritetni red
             dodaj(pq, tmp);
         }
-        free(tmp.naziv);
-        free(tmp.opis);
+        //free(tmp.naziv);
+        //free(tmp.opis);
         free(line);
         fclose(txt2);
     }

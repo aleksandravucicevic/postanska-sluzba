@@ -13,7 +13,7 @@ void punjenjeVozila(CVOR** pq, VOZILO* v, int* brUspjesno, int* brNeuspjesno)
 {
     FILE *txt3;
     PAKET* tmp;
-    if(txt3=fopen("visak paketa2.txt","w"))
+    if(txt3=fopen("visak_paketa.txt","w"))
     {
         v->niz=(PAKET*)malloc(sizeof(PAKET)*MAX_PAKETA);
         double masaPaketa=0;
